@@ -1,9 +1,15 @@
 "use client";
 
-import { ChangeEvent, KeyboardEventHandler, useState } from "react";
+import {
+  ChangeEvent,
+  HTMLInputTypeAttribute,
+  KeyboardEventHandler,
+  useState,
+} from "react";
 import { FaEye, FaEyeSlash, FaTrash } from "react-icons/fa";
 
 import cn from "@/lib/clsx";
+import OptionTypeBase from "react-select";
 
 interface InputProps {
   label?: string;
@@ -40,7 +46,12 @@ interface SelectFieldProps {
 }
 
 interface TextFieldProps extends InputProps {
-  type: "email" | "text" | "password" | "number" | string;
+  type: HTMLInputTypeAttribute | undefined;
+}
+
+export interface OptionType extends OptionTypeBase {
+  value?: string;
+  label?: string;
 }
 
 export function TextField({
@@ -159,7 +170,7 @@ export function SelectField({
       )}
       <select
         name={name}
-        defaultValue={value}
+        defaultValue={value || ""}
         className={cn(
           "rounded-xl border border-neutral-400 px-[18px] active:border-black hover:border-black py-[14px] text-black placeholder-neutral-400 focus:outline-none transition-all duration-500",
           disabled ? "cursor-not-allowed" : "",
@@ -169,15 +180,14 @@ export function SelectField({
         onChange={handleChange}
         disabled={disabled}
       >
-        <option value="" disabled hidden>
+        <option value="" disabled selected={!value}>
           Pilih
         </option>
-        {options &&
-          options.map((option, index) => (
-            <option value={option.value} key={index}>
-              {option.label}
-            </option>
-          ))}
+        {options?.map((option, index) => (
+          <option value={option.value} key={index}>
+            {option.label}
+          </option>
+        ))}
       </select>
     </div>
   );

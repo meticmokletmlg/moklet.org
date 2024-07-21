@@ -9,6 +9,7 @@ declare global {
       NEXTAUTH_URL: string;
       CLOUDINARY_URL: string;
       GA_ID: string;
+      IMGBB_KEY: string;
       APP_ENV: "development" | "staging" | "production";
       [key: string]: string | undefined;
     }

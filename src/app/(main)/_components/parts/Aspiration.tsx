@@ -1,4 +1,4 @@
-import { Button } from "@/app/_components/global/Button";
+import LinkButton, { Button } from "@/app/_components/global/Button";
 import { TextArea, TextField } from "@/app/_components/global/Input";
 import { H2, P } from "@/app/_components/global/Text";
 import { SectionWrapper } from "@/app/_components/global/Wrapper";
@@ -32,9 +32,9 @@ export default function Aspiration() {
             className="mb-[44px] w-full"
             name="aspirasi"
           />
-          <Button variant={"primary"} isDisabled={false}>
+          <LinkButton variant={"primary"} href="/aspirasi">
             Kirim aspirasi
-          </Button>
+          </LinkButton>
         </form>
         <EclipseIcon className="absolute -top-[102px] -left-20 hidden md:block" />
         <EclipseIcon className="absolute bottom-24 left-[310px] hidden md:block" />

@@ -58,6 +58,7 @@ export default function LinkButton({
   scroll,
   download,
   disabledProgressBar,
+  prefetch,
 }: Readonly<LinkButtonProps>) {
   return (
     <Link
@@ -67,6 +68,7 @@ export default function LinkButton({
       scroll={scroll}
       download={download}
       data-disable-nprogress={disabledProgressBar}
+      prefetch={prefetch}
     >
       {children}
     </Link>

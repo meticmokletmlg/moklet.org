@@ -77,3 +77,11 @@ export type PeriodWithOrganisasi = Prisma.Period_YearGetPayload<{
 export type TwibbonWithUser = Prisma.TwibbonGetPayload<{
   include: { user: true };
 }>;
+
+export type AspirationWithUser = Prisma.AspirasiGetPayload<{
+  include: { user: true };
+}>;
+
+export type AspirationWithUserAndEvent = Prisma.AspirasiGetPayload<{
+  include: { user: true; event: true };
+}>;

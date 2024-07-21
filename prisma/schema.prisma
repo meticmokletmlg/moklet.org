@@ -36,6 +36,17 @@ enum Roles {
   Guest
 }
 
+enum UnitSekolah {
+  HUBIN
+  KURIKULUM
+  KESISWAAN
+  SARPRA
+  ISO
+  TU
+  GURU
+  SATPAMCS
+}
+
 enum LinkType {
   User
   System
@@ -53,6 +64,8 @@ model User {
   form_submissions Submission[]
   Link_Shortener   Link_Shortener[]
   Twibbon          Twibbon[]
+  Event            Event[]
+  Aspirasi         Aspirasi[]
 }
 
 model User_Auth {
@@ -181,7 +194,6 @@ enum Organisasi_Type {
   TSBC
   TSFC
   TSVC
-  TSCC
   PMR
   MEMO
   MAC
@@ -240,4 +252,26 @@ model Twibbon {
   updated_at DateTime    @updatedAt
   caption    String?     @db.LongText
   type       TwibbonType @default(PHOTO)
+}
+
+model Event {
+  id         String     @id @default(uuid())
+  event_name String
+  user       User       @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id    String     @db.Char(36)
+  aspirasi   Aspirasi[]
+  date       DateTime
+}
+
+model Aspirasi {
+  id             String           @id @default(uuid())
+  user           User             @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id        String
+  event          Event?           @relation(fields: [event_id], references: [id], onDelete: Cascade)
+  event_id       String?          @db.Char(36)
+  judul_aspirasi String
+  pesan_aspirasi String           @db.LongText
+  organisasi     Organisasi_Type?
+  unit_sekolah   UnitSekolah?
+  created_at     DateTime         @default(now())
 }

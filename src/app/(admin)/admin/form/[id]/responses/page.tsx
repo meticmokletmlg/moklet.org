@@ -83,6 +83,7 @@ export default async function FormResponses({
             className="text-center flex gap-2 items-center"
             disabledProgressBar
             target="_blank"
+            prefetch={false}
           >
             <FaRegFileExcel />
             Download Excel

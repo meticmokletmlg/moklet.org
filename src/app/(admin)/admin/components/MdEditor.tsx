@@ -29,6 +29,7 @@ export default function Editor({
   value,
   onChange,
   label,
+  hostType = "CLOUDINARY",
 }: {
   value: string;
   onChange: (
@@ -36,6 +37,7 @@ export default function Editor({
     event?: ChangeEvent<HTMLTextAreaElement> | undefined,
   ) => void;
   label?: string;
+  hostType?: "CLOUDINARY" | "IMGBB";
 }) {
   const insertImageRef = useRef<HTMLInputElement>(null);
 
@@ -58,6 +60,7 @@ export default function Editor({
         const data = new FormData();
 
         data.append("file", result!);
+        data.append("hostType", hostType);
         const toastId = toast.loading("Uploading image...");
         const upload = await fetch("/api/upload/image", {
           method: "POST",
@@ -97,6 +100,26 @@ export default function Editor({
     });
   }
 
+  const commands = [
+    bold,
+    italic,
+    strikethrough,
+    hr,
+    title,
+    divider,
+    link,
+    quote,
+    code,
+    codeBlock,
+    comment,
+    insertImage,
+    table,
+    divider,
+    unorderedListCommand,
+    orderedListCommand,
+    checkedListCommand,
+  ];
+
   return (
     <div data-color-mode="light">
       <label htmlFor="textEditor">{label ?? "Text Editor"}</label>
@@ -119,25 +142,7 @@ export default function Editor({
           padding: 0,
         }}
         id="textEditor"
-        commands={[
-          bold,
-          italic,
-          strikethrough,
-          hr,
-          title,
-          divider,
-          link,
-          quote,
-          code,
-          codeBlock,
-          comment,
-          insertImage,
-          table,
-          divider,
-          unorderedListCommand,
-          orderedListCommand,
-          checkedListCommand,
-        ]}
+        commands={commands}
       />
     </div>
   );

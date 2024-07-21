@@ -153,3 +153,13 @@ export function trimName(name: string) {
   const trimmedName = splitName[0] + " " + splitName[1];
   return trimmedName;
 }
+
+export function getDateMonths(date: Date, months: number) {
+  date.setMonth(date.getMonth() + months);
+  return date;
+}
+
+export function getDateDaysAgoMore(date: Date, days: number) {
+  date.setDate(date.getDate() + days);
+  return date;
+}
