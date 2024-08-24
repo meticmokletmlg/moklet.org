@@ -47,6 +47,7 @@
     "write-excel-file": "^2.0.3"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

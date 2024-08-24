@@ -51,14 +51,14 @@ export default async function Organizations({
       sectionName: "Organisasi",
       sectionLogo: <FaGlobe className="w-[42px] h-[42px]" />,
       sectionDesc:
-        "Struktur organisasi siswa, berbagai kegiatan yang dijalankan, serta peran penting Organisasi dalam membentuk kepemimpinan siswa di SMK Telkom Malang.",
+        "Struktur organisasi siswa, berbagai kegiatan yang dijalankan, serta peran penting Organisasi dalam membentuk kepemimpinan siswa di SMK Telkom Malang.",
       sectionOrgans: organ,
     },
     {
       sectionName: "Sub-organisasi",
       sectionLogo: <FaUserGroup className="w-[42px] h-[42px]" />,
       sectionDesc:
-        "Sub-Organisasi di Moklet.org adalah bagian penting dari organisasi siswa di SMK Telkom Malang, yang menampilkan beragam kegiatan dan inovasi yang dijalankan di bawah pengawasan OSIS dan MPK.",
+        "Sub-Organisasi adalah bagian penting dari organisasi siswa di SMK Telkom Malang, yang menampilkan beragam kegiatan dan inovasi yang dijalankan di bawah pengawasan OSIS dan MPK.",
       sectionOrgans: subOrgan,
     },
   ];

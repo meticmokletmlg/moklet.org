@@ -10,6 +10,7 @@ export default function MdViewer({ markdown }: Readonly<MdViewerProps>) {
   return (
     <MDEditor.Markdown
       source={markdown}
+      className="prose"
       style={{
         backgroundColor: "#fff",
         color: "#000",

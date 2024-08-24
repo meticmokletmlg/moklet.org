@@ -22,10 +22,11 @@ export default function ModalCreate({
     const result = await addLink(formdata);
     if (result.error) {
       toast.error(result.message, { id: toastId });
+    } else {
+      toast.success(result.message, { id: toastId });
+      setIsOpenModal(false);
       return ref.current?.reset();
     }
-    toast.success(result.message, { id: toastId });
-    setIsOpenModal(false);
   }
 
   return (

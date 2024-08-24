@@ -37,7 +37,7 @@ export default function Modal({
       }
 
       const result = await upsertTwibbon(data?.id as string, formdata);
-      if (result?.error) {
+      if (result?.success) {
         toast.success(result.message, { id: toastId });
         setIsOpenModal(false);
       } else toast.error(result.message, { id: toastId });
@@ -101,7 +101,7 @@ export default function Modal({
               <TextArea
                 name="caption"
                 value={data?.caption || undefined}
-                label="Caption"
+                label="Caption Template"
               />
             </div>
             <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b justify-end">

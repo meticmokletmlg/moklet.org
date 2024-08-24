@@ -38,15 +38,11 @@ export default function Navbar() {
 
   return (
     <nav className="xl:relative fixed z-[999] mx-auto w-full flex flex-col">
-      <div className="w-full flex xl:max-w-[1192px] mx-auto z-[999] py-4 xl:py-0 px-5 bg-white xl:bg-transparent justify-between">
-        <Link href={"/"} className="block xl:mt-8">
-          <Image
-            src={"/horizontal.svg"}
-            alt="Logo moklet.org"
-            width={120}
-            height={50}
-            className="pointer-events-none h-[50px] w-[130px]"
-          />
+      <div className="w-full flex xl:max-w-[1192px] mx-auto z-[999] py-4 xl:py-0 px-5 bg-white xl:bg-transparent justify-between items-center">
+        <Link href={"/"} className="xl:mt-12">
+          <span className="block w-[130px] h-[32px] bg-contain bg-[url(/horizontal.svg)] text-transparent bg-no-repeat pointer-events-none select-none">
+            Moklet Organization: SMK Telkom Malang
+          </span>
         </Link>
         <div
           className={cn(
@@ -57,7 +53,7 @@ export default function Navbar() {
             <Link href="/">
               <Image
                 src={"/horizontal.svg"}
-                alt="Logo moklet.org"
+                alt="Moklet Organization: SMK Telkom Malang"
                 width={120}
                 height={40}
                 className={cn(

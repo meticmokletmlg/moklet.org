@@ -4,7 +4,7 @@ import { Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { MultiValue } from "react-select";
 
-import { uploadImage } from "@/actions/fileUploader";
+import { uploadImageCloudinary } from "@/actions/fileUploader";
 import prisma from "@/lib/prisma";
 import {
   updatePost,
@@ -16,7 +16,7 @@ import { nextGetServerSession } from "@/lib/next-auth";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function uploadInsert(data: Record<string, any>) {
   try {
-    const result = await uploadImage(Buffer.from(data.data));
+    const result = await uploadImageCloudinary(Buffer.from(data.data));
 
     return result;
   } catch (e) {
@@ -30,7 +30,7 @@ export async function upload(data: FormData) {
   const ABuffer = await image.arrayBuffer();
 
   try {
-    const result = await uploadImage(Buffer.from(ABuffer));
+    const result = await uploadImageCloudinary(Buffer.from(ABuffer));
 
     return {
       status: "OK",
@@ -75,7 +75,7 @@ export async function postCreate(
     );
     const image = data.get("thumbnail") as File;
     const ABuffer = await image.arrayBuffer();
-    const upload = await uploadImage(Buffer.from(ABuffer));
+    const upload = await uploadImageCloudinary(Buffer.from(ABuffer));
 
     const newPost = await createPost({
       slug: slug,
@@ -128,7 +128,7 @@ export async function postUpdate(
     let upload;
     if (image) {
       const ABuffer = await image.arrayBuffer();
-      upload = await uploadImage(Buffer.from(ABuffer));
+      upload = await uploadImageCloudinary(Buffer.from(ABuffer));
     }
 
     const update = await updatePost(

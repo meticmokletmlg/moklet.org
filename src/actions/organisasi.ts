@@ -6,7 +6,7 @@ import {
   createOrganisasi,
   updateOrganisasi,
 } from "@/utils/database/organisasi.query";
-import { uploadImage } from "./fileUploader";
+import { uploadImageCloudinary } from "./fileUploader";
 
 export async function organisasiUpsert({
   data,
@@ -39,11 +39,11 @@ export async function organisasiUpsert({
 
     if (image) {
       const imageBuffer = await image.arrayBuffer();
-      uploadedImage = await uploadImage(Buffer.from(imageBuffer));
+      uploadedImage = await uploadImageCloudinary(Buffer.from(imageBuffer));
     }
     if (logo) {
       const logoBuffer = await logo.arrayBuffer();
-      uploadedLogo = await uploadImage(Buffer.from(logoBuffer));
+      uploadedLogo = await uploadImageCloudinary(Buffer.from(logoBuffer));
     }
 
     const organisasiInput = {

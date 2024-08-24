@@ -133,7 +133,7 @@ export default function Editor({
       <MDEditor
         value={value}
         onChange={onChange}
-        className=""
+        className="[&>div.w-md-editor-content>div.w-md-editor-preview]:prose"
         height={600}
         style={{
           backgroundColor: "#fff",
