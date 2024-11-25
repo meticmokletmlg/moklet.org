@@ -37,7 +37,8 @@ export default function AspirationForm({
       {recipient && type && (
         <>
           <H3>
-            Tuliskan aspirasimu untuk {type !== "EVENT" ? recipient : eventName}
+            Tuliskan aspirasi anda untuk{" "}
+            {type !== "EVENT" ? recipient : eventName}
           </H3>
           <form action={submitForm} ref={ref} className="mt-4">
             <div className="flex flex-col gap-5 mb-5">
