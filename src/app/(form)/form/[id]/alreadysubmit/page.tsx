@@ -14,7 +14,7 @@ export default function AlreadySubmit() {
     <SectionWrapper id="success">
       <div className="flex flex-col justify-center items-center gap-20">
         <Image
-          src={"/images/logogram.svg"}
+          src={"/images/thumb.svg"}
           alt={"success"}
           width={460}
           height={244}
