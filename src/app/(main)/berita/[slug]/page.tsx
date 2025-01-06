@@ -107,7 +107,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             </div>
             <div className="w-full">
               <div className="mb-[42px] flex flex-col lg:flex-row justify-between items-start gap-[32px] lg:gap-0 lg:items-center">
-                <div className="flex gap-[10px]">
+                <div className="flex flex-wrap gap-[10px]">
                   {post?.tags.map((tag) => (
                     <Tags tag={tag} key={tag.tagName} />
                   ))}
