@@ -6,7 +6,7 @@ import { H2 } from "@/app/_components/global/Text";
 import { SectionWrapper } from "@/app/_components/global/Wrapper";
 
 export const metadata: Metadata = {
-  title: "Formulir ditutup",
+  title: "Jawaban Anda telah terkirim",
 };
 
 export default function AlreadySubmit() {
