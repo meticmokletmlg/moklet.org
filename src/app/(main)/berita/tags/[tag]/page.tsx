@@ -6,14 +6,16 @@ import { findPostByTag } from "@/utils/database/tag.query";
 import GoBack from "../../[slug]/_components/BackButton";
 
 export default async function Tag({ params }: { params: { tag: string } }) {
-  const filteredPost = await findPostByTag(params.tag, true);
+  const decodedTag = decodeURIComponent(params.tag);
+
+  const filteredPost = await findPostByTag(decodedTag, true);
 
   return (
     <SmallSectionWrapper id="tag">
       <GoBack />
 
       <div className="mt-8">
-        <H2 className="mb-[54px]">Post dengan tag &quot;{params.tag}&quot;</H2>
+        <H2 className="mb-[54px]">Post dengan tag &quot;{decodedTag}&quot;</H2>
         <div className="flex flex-wrap gap-x-[36px] gap-y-[62px]">
           {filteredPost?.map((post) => (
             <NewsFigure post={post as PostWithTagsAndUser} key={post.id} />
