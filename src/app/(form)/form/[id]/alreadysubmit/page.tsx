@@ -14,10 +14,11 @@ export default function AlreadySubmit() {
     <SectionWrapper id="success">
       <div className="flex flex-col justify-center items-center gap-20">
         <Image
-          src={"/images/thumb.svg"}
-          alt={"success"}
-          width={460}
-          height={244}
+          src={"/images/thumb.png"}
+          alt={"thumb"}
+          width={260}
+          height={144}
+          priority
         />
         <div className="flex flex-col items-center justify-center">
           <div className="mb-11 text-center">
