@@ -11,7 +11,7 @@ export function Tags({ tag }: Readonly<{ tag: Tag }>) {
     <Link
       key={tag.tagName}
       href={`/berita/tags/${tag.tagName}`}
-      className="rounded-full bg-primary-50 text-primary-400 px-[18px] py-1.5 transition-all duration-500 hover:bg-primary-400 hover:text-primary-50"
+      className="rounded-[18px] bg-primary-50 text-primary-400 px-[18px] py-1.5 transition-all duration-500 hover:bg-primary-400 hover:text-primary-50"
     >
       <span className="text-sm">{tag.tagName}</span>
     </Link>

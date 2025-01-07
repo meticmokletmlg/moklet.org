@@ -50,6 +50,12 @@ Technologies used in the project:
 - NextAuth.JS
 - Prisma
 
+## 🤝 Contributing
+
+We welcome contributions to this project! Please take a moment to review our [📄 CONTRIBUTING.md](https://github.com/mokletdev/moklet.org/blob/development/CONTRIBUTING.md) guide for details on our code of conduct, contribution process, and how to get started.
+
+Your support and ideas make this project even better. Thank you for being part of our community! 🌟
+
 <h2>🛡️ License:</h2>
 
 This project is licensed under the GNU [General Public License v3.0](https://github.com/mokletdev/moklet.org/blob/development/LICENSE.md)
