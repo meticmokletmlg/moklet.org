@@ -22,7 +22,7 @@ export default function RelatedNewsFigure({
       </div>
       <div className="flex flex-col items-start justify-start gap-[26px]">
         <div>
-          <div className="mb-[16px] mt-[26px] flex gap-[10px]">
+          <div className="mb-[16px] mt-[26px] flex flex-wrap gap-[10px]">
             {post.tags.map((tag) => (
               <Tags tag={tag} key={tag.tagName} />
             ))}
